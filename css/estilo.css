@@ -1,0 +1,87 @@
+*{
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+    margin: 0;
+    background: url('../img/fondo.jpg') no-repeat center center fixed;
+    background-size: cover;
+     /* overflow: hidden;  */
+}
+
+.navbar{
+    background-color: rgba(0,0,0,0.5);
+    padding: 15px;
+    display: block;
+    color: white;
+    cursor: pointer;
+    font-size: 2em;
+    width: 100%;
+} 
+.menu, .submenu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.menu{
+    background-color: rgba(0,0,0,0.40);
+    width: 100%;
+    margin-left: -100%;
+    transition: all 0.5s;
+}
+.menuLink{
+    display: block;
+    padding: 20px;
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+    font-weight: 500;
+}
+.menuLink:hover{
+    background-color: rgba(0,0,0,0.6);
+
+}
+.submenu .menuLink:hover{
+    background-color: rgba(0,0,0,0.6);
+}
+.submenu{
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+.submenu .menuLink{
+    background-color: rgba(0,0,0,0.4);
+    padding-left: 40px;
+}
+.mostrar{
+    margin-left: 0;
+}
+
+@media(min-width:1024px) {
+    .navbar{
+        display: none;
+    }
+    .menu{
+        margin-left: 0;
+        display: flex;
+        
+    }
+    .contenedorSubmenu{
+        position: relative;
+    }
+    .submenu{
+        position: absolute; 
+        top: 60px;
+        width: 180px;
+        overflow: visible;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+    }
+    .contenedorSubmenu:hover .submenu{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
